@@ -65,6 +65,15 @@ function checkForm()
     return (false);
   }
   
+  var companyRE = /^.{2,64}$/;
+  
+  if (!theForm.elements['Organization'].value.match(companyRE))
+  {
+    alert('Please keep the company name between 2 and 64 characters in length.');
+    theForm.elements['Organization'].focus();
+    return (false);
+  }  
+  
    if (theForm.elements['Industry'].selectedIndex == "")
   {
     alert('Please select an industry.');
